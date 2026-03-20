@@ -1,0 +1,269 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habesha's Kitchen - Authentic Ethiopian & culture Food</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+ <style>
+        :root {
+            --habesha-red: #C1272D;
+            --habesha-green: #006B3F;
+            --habesha-yellow: #FFCC00;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+
+        }
+        
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .habesha-red {
+            color: var(--habesha-red);
+        }
+        
+        .bg-habesha-red {
+            background-color: var(--habesha-red);
+        }
+        
+        .border-habesha-red {
+            border-color: var(--habesha-red);
+        }
+        
+        .habesha-green {
+            color: var(--habesha-green);
+        }
+        
+        .bg-habesha-green {
+            background-color: var(--habesha-green);
+        }
+        
+        .habesha-yellow {
+            color: var(--habesha-yellow);
+        }
+        
+        .bg-habesha-yellow {
+            background-color: var(--habesha-yellow);
+        }
+        
+        .border-habesha-yellow {
+            border-color: var(--habesha-yellow);
+        }
+        
+        .hero-pattern {
+           
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23C1272D' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        
+        .ethiopian-border {
+            border-style: double;
+            border-width: 10px;
+            border-image: repeating-linear-gradient(45deg, var(--habesha-green), var(--habesha-green) 10px, var(--habesha-yellow) 10px, var(--habesha-yellow) 20px) 10;
+        }
+        
+        .spice-level-1 { width: 20%; }
+        .spice-level-2 { width: 40%; }
+        .spice-level-3 { width: 60%; }
+        .spice-level-4 { width: 80%; }
+        .spice-level-5 { width: 100%; }
+    </style>
+    <body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-habesha-red rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">HK</span>
+                    </div>
+                    <div>
+                        <h1 class="font-display text-2xl font-bold habesha-green">Habesha's Kitchen</h1>
+                        <p class="text-xs text-gray-600">Authentic Ethiopian & culture Food</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="habesha.html" class="font-medium hover:text-habesha-red transition">Home</a>
+                    <a href="about.html" class="font-medium hover:text-habesha-red transition">About</a>
+                    <a href="menu.html" class="font-medium hover:text-habesha-red transition">Menu</a>
+                    <a href="order.html" class="font-medium hover:text-habesha-red transition">Order</a>
+                    <a href="delivery.html" class="font-medium hover:text-habesha-red transition">Delivery</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+<section id="about" class="bg-white py-16">
+    
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                
+                <h2 class="font-display text-4xl font-bold text-gray-900 mb-4">Our Story</h2>
+                <div class="w-24 h-1 bg-habesha-red mx-auto"></div>
+            </div>
+             
+        
+            
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="http://static.photos/restaurant/640x360/23" alt="Habesha's Kitchen interior" class="rounded-2xl shadow-xl w-full">
+                </div>
+                <div>
+                    <h3 class="font-display text-3xl font-bold text-gray-900 mb-6">
+                        Bringing <span class="habesha-green">Family Recipes</span> to Your Table
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        Founded by  and Solomon in 2016, Habesha's Kitchen started as a small family restaurant sharing the authentic tastes of Ethiopia and Eritrea with our community. Our recipes have been passed down through generations, preserving the rich culinary heritage of the Horn of Africa.
+                    </p>
+                    <p class="text-gray-600 mb-8">
+                        We source our ingredients carefully, using traditional spices like berbere, mitmita, and niter kibbeh to create dishes that are both authentic and adapted to delight every palate. Every meal is served with our signature injera, made fresh daily.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-habesha-yellow rounded-full flex items-center justify-center">
+                                <i data-lucide="chef-hat" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Master Chefs</p>
+                                <p class="text-sm text-gray-500">Traditional training</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-habesha-yellow rounded-full flex items-center justify-center">
+                                <i data-lucide="leaf" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Fresh Ingredients</p>
+                                <p class="text-sm text-gray-500">Locally sourced</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-habesha-yellow rounded-full flex items-center justify-center">
+                                <i data-lucide="users" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Family Recipes</p>
+                                <p class="text-sm text-gray-500">Generational secrets</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-habesha-yellow rounded-full flex items-center justify-center">
+                                <i data-lucide="award" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Award Winning</p>
+                                <p class="text-sm text-gray-500">Best Ethiopian 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-habesha-red rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">HK</span>
+                        </div>
+                        <div>
+                            <h2 class="font-display text-xl font-bold">Habesha's Kitchen</h2>
+                            <p class="text-xs text-gray-400">Authentic Ethiopian & culture</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Bringing the authentic flavors of Ethiopia and culture to your table since 2010.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-habesha-red transition">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-habesha-red transition">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-habesha-red transition">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Contact Info</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-habesha-yellow mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-medium">Address</p>
+                                <p class="text-gray-400">bole meackayel<br>Addis Ababa District</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-lucide="phone" class="w-5 h-5 text-habesha-yellow mr-3"></i>
+                            <div>
+                                <p class="font-medium">Phone</p>
+                                <p class="text-gray-400">+251 912345678</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-lucide="mail" class="w-5 h-5 text-habesha-yellow mr-3"></i>
+                            <div>
+                                <p class="font-medium">Email</p>
+                                <p class="text-gray-400">habeshafood@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#menu" class="text-gray-400 hover:text-white transition">Menu</a></li>
+                        <li><a href="#order" class="text-gray-400 hover:text-white transition">Order Online</a></li>
+                        <li><a href="#delivery" class="text-gray-400 hover:text-white transition">Delivery Info</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe for updates and special offers.</p>
+                    <div class="flex">
+                        <input type="email" class="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-l-lg focus:outline-none focus:border-habesha-red" placeholder="Your email">
+                        <button class="px-6 bg-habesha-red rounded-r-lg hover:bg-red-700 transition">
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-4">
+                        We respect your privacy. Unsubscribe at any time.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 Habesha's Kitchen. All rights reserved.</p>
+                <p class="text-sm mt-2">Traditional Ethiopian & culture Food>
+            </div>
+        </div>
+    </footer>
+     

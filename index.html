@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habesha's Kitchen - Authentic Ethiopian & culture Food</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --habesha-red: #C1272D;
+            --habesha-green: #006B3F;
+            --habesha-yellow: #FFCC00;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+
+        }
+        
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .habesha-red {
+            color: var(--habesha-red);
+        }
+        
+        .bg-habesha-red {
+            background-color: var(--habesha-red);
+        }
+        
+        .border-habesha-red {
+            border-color: var(--habesha-red);
+        }
+        
+        .habesha-green {
+            color: var(--habesha-green);
+        }
+        
+        .bg-habesha-green {
+            background-color: var(--habesha-green);
+        }
+        
+        .habesha-yellow {
+            color: var(--habesha-yellow);
+        }
+        
+        .bg-habesha-yellow {
+            background-color: var(--habesha-yellow);
+        }
+        
+        .border-habesha-yellow {
+            border-color: var(--habesha-yellow);
+        }
+        
+        .hero-pattern {
+           
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23C1272D' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        
+        .ethiopian-border {
+            border-style: double;
+            border-width: 10px;
+            border-image: repeating-linear-gradient(45deg, var(--habesha-green), var(--habesha-green) 10px, var(--habesha-yellow) 10px, var(--habesha-yellow) 20px) 10;
+        }
+        
+        .spice-level-1 { width: 20%; }
+        .spice-level-2 { width: 40%; }
+        .spice-level-3 { width: 60%; }
+        .spice-level-4 { width: 80%; }
+        .spice-level-5 { width: 100%; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-habesha-red rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">HK</span>
+                    </div>
+                    <div>
+                        <h1 class="font-display text-2xl font-bold habesha-green">Habesha's Kitchen</h1>
+                        <p class="text-xs text-gray-600">Authentic Ethiopian & culture Food</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="font-medium hover:text-habesha-red transition">Home</a>
+                    <a href="about.html" class="font-medium hover:text-habesha-red transition">About</a>
+                    <a href="menu.html" class="font-medium hover:text-habesha-red transition">Menu</a>
+                    <a href="order.html" class="font-medium hover:text-habesha-red transition">Order</a>
+                    <a href="delivery.html" class="font-medium hover:text-habesha-red transition">Delivery</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden py-4 border-t">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="font-medium hover:text-habesha-red transition">Home</a>
+                    <a href="#about" class="font-medium hover:text-habesha-red transition">About</a>
+                    <a href="#menu" class="font-medium hover:text-habesha-red transition">Menu</a>
+                    <a href="#order" class="font-medium hover:text-habesha-red transition">Order</a>
+                    <a href="#delivery" class="font-medium hover:text-habesha-red transition">Delivery</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative overflow-hidden">
+        <div class="absolute inset-0 hero-pattern opacity-10"></div>
+        <div class="container mx-auto px-4 py-16 md:py-24 relative">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-block px-4 py-2 bg-habesha-yellow rounded-full mb-6">
+                        <span class="text-sm font-semibold">✨ Traditional Since 2010</span>
+                    </div>
+                    <h1 class="font-display text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                        Taste the True <span class="habesha-red">Flavors</span> of Ethiopia
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Experience authentic Ethiopian and culture food made with traditional recipes, fresh ingredients, and served with genuine hospitality.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#order" class="px-8 py-3 bg-habesha-red text-white font-semibold rounded-lg hover:bg-red-700 transition text-center">
+                            Order Now
+                        </a>
+                        <a href="#menu" class="px-8 py-3 border-2 border-habesha-red text-habesha-red font-semibold rounded-lg hover:bg-red-50 transition text-center">
+                            View Menu
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="ethiopian-border rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="http://static.photos/food/1200x630/42" alt="Traditional Ethiopian Injera with stews" class="w-full h-auto">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-habesha-green rounded-full flex items-center justify-center">
+                                <i data-lucide="star" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-bold">4.8</p>
+                                <p class="text-sm text-gray-600">Customer Rating</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="w-10 h-10 bg-habesha-red rounded-full flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">HK</span>
+                        </div>
+                        <div>
+                            <h2 class="font-display text-xl font-bold">Habesha's Kitchen</h2>
+                            <p class="text-xs text-gray-400">Authentic Ethiopian & culture</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Bringing the authentic flavors of Ethiopia and culture to your table since 2010.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-habesha-red transition">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-habesha-red transition">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-habesha-red transition">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Contact Info</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-habesha-yellow mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-medium">Address</p>
+                                <p class="text-gray-400">bole meackayel<br>Addis Ababa District</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-lucide="phone" class="w-5 h-5 text-habesha-yellow mr-3"></i>
+                            <div>
+                                <p class="font-medium">Phone</p>
+                                <p class="text-gray-400">+251 912345678</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-lucide="mail" class="w-5 h-5 text-habesha-yellow mr-3"></i>
+                            <div>
+                                <p class="font-medium">Email</p>
+                                <p class="text-gray-400">habeshafood@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#menu" class="text-gray-400 hover:text-white transition">Menu</a></li>
+                        <li><a href="#order" class="text-gray-400 hover:text-white transition">Order Online</a></li>
+                        <li><a href="#delivery" class="text-gray-400 hover:text-white transition">Delivery Info</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-6">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe for updates and special offers.</p>
+                    <div class="flex">
+                        <input type="email" class="flex-1 px-4 py-3 bg-gray-800 border border-gray-700 rounded-l-lg focus:outline-none focus:border-habesha-red" placeholder="Your email">
+                        <button class="px-6 bg-habesha-red rounded-r-lg hover:bg-red-700 transition">
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-4">
+                        We respect your privacy. Unsubscribe at any time.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 Habesha's Kitchen. All rights reserved.</p>
+                <p class="text-sm mt-2">Traditional Ethiopian & culture Food>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+        // Habesha's Kitchen - Main JavaScript
+
+// Mobile Menu Toggle
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        const icon = mobileMenuButton.querySelector('i');
+        if (mobileMenu.classList.contains('hidden')) {
+            lucide.createIcons();
+        } else {
+            icon.setAttribute('data-lucide', 'x');
+            lucide.createIcons();
+        }
+    });
+}
+
+// Menu Data
+const menuItems = [
+    {
+        id: 1,
+        name: "Doro Wat",
+        description: "Spicy chicken stew with berbere sauce and boiled eggs, served with injera",
+        price: 18.99,
+        category: "meat",
+        image: "http://static.photos/food/320x240/10",
+        spiceLevel: 4,
+        vegetarian: false,
+        popular: true
+    },
+    {
+        id: 2,
+        name: "Misir Wat",
+        description: "Red lentil stew cooked with berbere spices and herbs",
+        price: 14.99,
+        category: "vegetarian",
+        image: "http://static.photos/food/320x240/11",
+        spiceLevel: 3,
+        vegetarian: true,
+        popular: true
+    },
+    {
+        id: 3,
+        name: "Tibs",
+        description: "Sautéed beef or lamb with rosemary, garlic, and awaze sauce",
+        price: 19.99,
+        category: "meat",
+        image: "http://static.photos/food/320x240/12",
+        spiceLevel: 2,
+        vegetarian: false,
+        popular: true
+    },
+    {
+        id: 4,
+        name: "Shiro",
+        description: "Ground chickpea stew with garlic, ginger, and spices",
+        price: 13.99,
+        category: "vegetarian",
+        image: "http://static.photos/food/320x240/13",
+        spiceLevel: 2,
+        vegetarian: true,
+        popular: false
+    },
+    {
+        id: 5,
+        name: "Kitfo",
+        description: "Traditional minced raw beef seasoned with mitmita and niter kibbeh",
+        price: 21.99,
+        category: "meat",
+        image: "http://static.photos/food/320x240/14",
+        spiceLevel: 3,
+        vegetarian: false,
+        popular: false
+    },
+    {
+        id: 6,
+        name: "Vegetarian Combo",
+        description: "Sampler of 5 vegetarian dishes including misir, shiro, gomen, and more",
+        price: 22.99,
+        category: "vegetarian",
+        image: "http://static.photos/food/320x240/15",
+        spiceLevel: 1,
+        vegetarian: true,
+        popular: true
+    },
+    {
+        id: 7,
+        name: "Special Tibs",
+        description: "Premium beef tibs with awaze sauce, served with homemade ayib cheese",
+        price: 24.99,
+        category: "specials",
+        image: "http://static.photos/food/320x240/16",
+        spiceLevel: 4,
+        vegetarian: false,
+        popular: true
+    },
+    {
+        id: 8,
+        name: "Firfir",
+        description: "Shredded injera mixed with berbere sauce and spices",
+        price: 12.99,
+        category: "vegetarian",
+        image: "http://static.photos/food/320x240/17",
+        spiceLevel: 3,
+        vegetarian: true,
+        popular: false
+    },
+    {
+        id: 9,
+        name: "Habesha Feast",
+        description: "Family platter with 3 meat and 4 vegetable dishes, feeds 4-6 people",
+        price: 49.99,
+        category: "specials",
+        image: "http://static.photos/food/320x240/18",
+        spiceLevel: 2,
+        vegetarian: false,
+        popular: true
+    },
+    {
+        id: 10,
+        name: "teji",
+        description: "Family platter with 3 meat and 4 vegetable dishes, feeds 4-6 people",
+        price: 49.99,
+        category: "Fresh",
+        image: "http://static.photos/food/320x240/18",
+        spiceLevel: 2,
+        vegetarian: false,
+        popular: true
+    },
+    {
+        id: 11,
+        name: "tela",
+        description: "Family platter with 3 meat and 4 vegetable dishes, feeds 4-6 people",
+        price: 49.99,
+        category: "Fresh",
+        image: "http://static.photos/food/320x240/18",
+        spiceLevel: 2,
+        vegetarian: false,
+        popular: true
+    },
+      {
+        id: 12,
+        name: "wine",
+        description: "Family platter with 3 meat and 4 vegetable dishes, feeds 4-6 people",
+        price: 49.99,
+        category: "Fresh",
+        image: "http://static.photos/food/320x240/18",
+        spiceLevel: 2,
+        vegetarian: false,
+        popular: true
+    },
+      {
+        id: 13,
+        name: "yejebna buna",
+        description: "Family platter with 3 meat and 4 vegetable dishes, feeds 4-6 people",
+        price: 49.99,
+        category: "Fresh",
+        image: "http://static.photos/food/320x240/18",
+        spiceLevel: 2,
+        vegetarian: false,
+        popular: true
+    }
+];
+
+// Shopping Cart
+let cart = [];
+let orderType = 'pickup'; // 'delivery' or 'pickup'
+const deliveryFee = 4.99;
+const taxRate = 0.085; // 8.5%
+
+// Initialize Menu
+function initMenu() {
+    const menuContainer = document.getElementById('menu-items');
+    if (!menuContainer) return;
+    
+    menuContainer.innerHTML = '';
+    
+    menuItems.forEach(item => {
+        const menuItem = document.createElement('div');
+        menuItem.className = 'bg-white rounded-2xl shadow-lg overflow-hidden menu-item transition-all duration-300';
+        menuItem.dataset.category = item.category;
+        
+        const spiceLevelClass = `spice-level-${item.spiceLevel}`;
+        
+        menuItem.innerHTML = `
+            <div class="relative">
+                <img src="${item.image}" alt="${item.name}" class="w-full h-48 object-cover">
+                ${item.popular ? `
+                <div class="absolute top-4 right-4 bg-habesha-red text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    Popular
+                </div>` : ''}
+                ${item.vegetarian ? `
+                <div class="absolute top-4 left-4 bg-habesha-green text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    Vegetarian
+                </div>` : ''}
+            </div>
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-xl font-bold text-gray-900">${item.name}</h3>
+                    <span class="text-2xl font-bold habesha-red">$${item.price.toFixed(2)}</span>
+                </div>
+                <p class="text-gray-600 mb-4">${item.description}</p>
+                
+                <div class="mb-4">
+                    <div class="flex justify-between text-sm text-gray-500 mb-1">
+                        <span>Spice Level</span>
+                        <span>${item.spiceLevel}/5</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-habesha-red h-2 rounded-full ${spiceLevelClass}"></div>
+                    </div>
+                </div>
+                
+                <button class="add-to-cart w-full py-3 bg-habesha-yellow text-gray-900 font-semibold rounded-lg hover:bg-yellow-500 transition flex items-center justify-center"
+                        data-id="${item.id}">
+                    <i data-lucide="shopping-cart" class="w-5 h-5 mr-2"></i>
+                    Add to Order
+                </button>
+            </div>
+        `;
+        
+        menuContainer.appendChild(menuItem);
+    });
+    
+    // Add event listeners to add-to-cart buttons
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', function() {
+            const itemId = parseInt(this.dataset.id);
+            addToCart(itemId);
+        });
+    });
+    
+    // Initialize Lucide icons for new elements
+    lucide.createIcons();
+}
+
+// Filter Menu by Category
+function initMenuFilters() {
+    const categoryButtons = document.querySelectorAll('.menu-category');
+    const menuItems = document.querySelectorAll('.menu-item');
+    
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Update active button
+            categoryButtons.forEach(btn => {
+                btn.classList.remove('bg-habesha-red', 'text-white');
+                btn.classList.add('bg-white', 'text-gray-700');
+            });
+            this.classList.add('bg-habesha-red', 'text-white');
+            this.classList.remove('bg-white', 'text-gray-700');
+            
+            const category = this.dataset.category;
+            
+            // Show/hide menu items
+            menuItems.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+}
+
+// Cart Functions
+function addToCart(itemId) {
+    const item = menuItems.find(i => i.id === itemId);
+    if (!item) return;
+    
+    const existingItem = cart.find(i => i.id === itemId);
+    
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({
+            ...item,
+            quantity: 1
+        });
+    }
+    
+    updateCartDisplay();
+    showNotification(`${item.name} added to cart!`);
+}
+
+function removeFromCart(itemId) {
+    cart = cart.filter(item => item.id !== itemId);
+    updateCartDisplay();
+    showNotification('Item removed from cart');
+}
+
+function updateCartDisplay() {
+    const orderItemsContainer = document.getElementById('order-items');
+    const subtotalElement = document.getElementById('subtotal');
+    const deliveryFeeElement = document.getElementById('delivery-fee');
+    const taxElement = document.getElementById('tax');
+    const totalElement = document.getElementById('total');
+    const checkoutButton = document.getElementById('checkout-btn');
+    
+    if (cart.length === 0) {
+        orderItemsContainer.innerHTML = `
+            <div class="text-center py-8">
+                <i data-lucide="shopping-cart" class="w-12 h-12 mx-auto text-gray-400 mb-4"></i>
+                <p class="text-gray-400">Your cart is empty</p>
+                <p class="text-sm text-gray-500">Add items from the menu</p>
+            </div>
+        `;
+        checkoutButton.disabled = true;
+        lucide.createIcons();
+    } else {
+        let subtotal = 0;
+        orderItemsContainer.innerHTML = '';
+        
+        cart.forEach(item => {
+            const itemTotal = item.price * item.quantity;
+            subtotal += itemTotal;
+            
+            const cartItem = document.createElement('div');
+            cartItem.className = 'flex justify-between items-center py-3 border-b border-gray-700';
+            cartItem.innerHTML = `
+                <div class="flex-1">
+                    <h4 class="font-semibold">${item.name}</h4>
+                    <div class="flex items-center mt-1">
+                        <button class="quantity-btn text-gray-400 hover:text-white" data-id="${item.id}" data-action="decrease">
+                            <i data-lucide="minus" class="w-3 h-3"></i>
+                        </button>
+                        <span class="mx-2">${item.quantity}</span>
+                        <button class="quantity-btn text-gray-400 hover:text-white" data-id="${item.id}" data-action="increase">
+                            <i data-lucide="plus" class="w-3 h-3"></i>
+                        </button>
+                        <span class="mx-4 text-gray-400">×</span>
+                        <span class="text-habesha-yellow">$${item.price.toFixed(2)}</span>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <span class="mr-4">$${itemTotal.toFixed(2)}</span>
+                    <button class="remove-item text-gray-400 hover:text-red-400" data-id="${item.id}">
+                        <i data-lucide="trash-2" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            `;
+            orderItemsContainer.appendChild(cartItem);
+        });
+        
+        // Add event listeners for quantity buttons
+        document.querySelectorAll('.quantity-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const itemId = parseInt(this.dataset.id);
+                const action = this.dataset.action;
+                updateQuantity(itemId, action);
+            });
+        });
+        
+        // Add event listeners for remove buttons
+        document.querySelectorAll('.remove-item').forEach(button => {
+            button.addEventListener('click', function() {
+                const itemId = parseInt(this.dataset.id);
+                removeFromCart(itemId);
+            });
+        });
+        
+        checkoutButton.disabled = false;
+        lucide.createIcons();
+    }
+    
+    // Calculate totals
+    const delivery = orderType === 'delivery' ? deliveryFee : 0;
+    const tax = subtotal * taxRate;
+    const total = subtotal + delivery + tax;
+    
+    subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+    deliveryFeeElement.textContent = orderType === 'delivery' ? `$${deliveryFee.toFixed(2)}` : '$0.00';
+    taxElement.textContent = `$${tax.toFixed(2)}`;
+    totalElement.textContent = `$${total.toFixed(2)}`;
+}
+
+function updateQuantity(itemId, action) {
+    const item = cart.find(i => i.id === itemId);
+    if (!item) return;
+    
+    if (action === 'increase') {
+        item.quantity += 1;
+    } else if (action === 'decrease') {
+        item.quantity -= 1;
+        if (item.quantity <= 0) {
+            removeFromCart(itemId);
+            return;
+        }
+    }
+    
+    updateCartDisplay();
+}
+
+// Order Type Toggle
+function initOrderTypeToggle() {
+    const orderTypeButtons = document.querySelectorAll('.order-type-btn');
+    const deliveryAddressContainer = document.getElementById('delivery-address');
+    
+    orderTypeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Update active button
+            orderTypeButtons.forEach(btn => {
+                btn.classList.remove('bg-habesha-red', 'text-white', 'border-habesha-red');
+                btn.classList.add('border-gray-200', 'text-gray-700');
+            });
+            this.classList.add('bg-habesha-red', 'text-white', 'border-habesha-red');
+            this.classList.remove('border-gray-200', 'text-gray-700');
+            
+            // Update order type
+            orderType = this.dataset.type;
+            
+            // Show/hide delivery address
+            if (orderType === 'delivery') {
+                deliveryAddressContainer.style.display = 'block';
+            } else {
+                deliveryAddressContainer.style.display = 'none';
+            }
+            
+            // Update cart display to recalculate delivery fee
+            updateCartDisplay();
+        });
+    });
+}
+
+// Checkout Function
+function initCheckout() {
+    const checkoutButton = document.getElementById('checkout-btn');
+    
+    checkoutButton.addEventListener('click', function() {
+        if (cart.length === 0) return;
+        
+        // In a real application, this would process payment
+        // For demo purposes, we'll show a success message
+        
+        const modal = document.createElement('div');
+        modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
+        modal.innerHTML = `
+            <div class="bg-white rounded-2xl p-8 max-w-md w-full">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-habesha-green rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="check" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Order Confirmed!</h3>
+                    <p class="text-gray-600">Thank you for your order from Habesha's Kitchen.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-4 mb-6">
+                    <div class="text-center mb-4">
+                        <p class="font-semibold">Order Summary</p>
+                        <p class="text-sm text-gray-500">#${Math.floor(Math.random() * 10000) + 1000}</p>
+                    </div>
+                    ${cart.map(item => `
+                        <div class="flex justify-between py-2 border-b border-gray-200">
+                            <span>${item.name} × ${item.quantity}</span>
+                            <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                        </div>
+                    `).join('')}
+                    <div class="flex justify-between py-2 font-bold">
+                        <span>Total</span>
+                        <span>$${document.getElementById('total').textContent.replace('$', '')}</span>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <p class="text-gray-600 mb-6">
+                        ${orderType === 'delivery' 
+                            ? 'Your order will be delivered in 30-45 minutes.' 
+                            : 'Your order will be ready for pickup in 20-30 minutes.'}
+                    </p>
+                    <button id="close-modal" class="px-8 py-3 bg-habesha-red text-white font-semibold rounded-lg hover:bg-red-700 transition">
+                        Done
+                    </button>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(modal);
+        lucide.createIcons();
+        
+        document.getElementById('close-modal').addEventListener('click', () => {
+            document.body.removeChild(modal);
+            // Clear cart after successful order
+            cart = [];
+            updateCartDisplay();
+        });
+    });
+}
+
+// Check Delivery Area
+function initDeliveryCheck() {
+    const checkAreaBtn = document.getElementById('check-area-btn');
+    
+    if (checkAreaBtn) {
+        checkAreaBtn.addEventListener('click', () => {
+            const zipCode = prompt('Please enter your ZIP code to check delivery availability:');
+            if (zipCode) {
+                // Simple demo validation
+                const validZipCodes = ['10001', '10002', '10003', '10004', '10005'];
+                if (validZipCodes.includes(zipCode)) {
+                    alert('✅ Great news! We deliver to your area. Delivery fee: $4.99');
+                } else {
+                    alert('🚫 Sorry, we don\'t currently deliver to your area. Pickup is always available!');
+                }
+            }
+        });
+    }
+}
+
+// Notification System
+function showNotification(message) {
+    const notification = document.createElement('div');
+    notification.className = 'fixed bottom-4 right-4 bg-habesha-green text-white px-6 py-4 rounded-lg shadow-lg z-50 transform translate-y-full opacity-0 transition-all duration-300';
+    notification.textContent = message;
+    
+    document.body.appendChild(notification);
+    
+    // Animate in
+    setTimeout(() => {
+        notification.classList.remove('translate-y-full', 'opacity-0');
+        notification.classList.add('translate-y-0', 'opacity-100');
+    }, 10);
+    
+    // Animate out and remove
+    setTimeout(() => {
+        notification.classList.remove('translate-y-0', 'opacity-100');
+        notification.classList.add('translate-y-full', 'opacity-0');
+        
+        setTimeout(() => {
+            if (notification.parentNode) {
+                document.body.removeChild(notification);
+            }
+        }, 300);
+    }, 3000);
+}
+
+// Smooth scrolling for navigation links
+function initSmoothScrolling() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    const icon = mobileMenuButton.querySelector('i');
+                    icon.setAttribute('data-lucide', 'menu');
+                    lucide.createIcons();
+                }
+            }
+        });
+    });
+}
+
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initMenu();
+    initMenuFilters();
+    initOrderTypeToggle();
+    initCheckout();
+    initDeliveryCheck();
+    initSmoothScrolling();
+    
+    // Auto-update icons periodically (for dynamic content)
+    setInterval(() => {
+        lucide.createIcons();
+    }, 1000);
+});
+
+// Handle window resize for responsive behavior
+window.addEventListener('resize', function() {
+    lucide.createIcons();
+});
+    </script>
+</body>
+</html>
