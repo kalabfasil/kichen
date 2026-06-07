@@ -80,11 +80,11 @@
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation -->
+    
     <nav class="bg-white shadow-lg sticky top-0 z-50">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
-                <!-- Logo -->
+                
                 <div class="flex items-center space-x-2">
                     <div class="w-10 h-10 bg-habesha-red rounded-full flex items-center justify-center">
                         <span class="text-white font-bold text-xl">HK</span>
@@ -95,7 +95,7 @@
                     </div>
                 </div>
 
-                <!-- Desktop Navigation -->
+                
                 <div class="hidden md:flex space-x-8">
                     <a href="index.html" class="font-medium hover:text-habesha-red transition">Home</a>
                     <a href="about.html" class="font-medium hover:text-habesha-red transition">About</a>
@@ -104,12 +104,11 @@
                     <a href="delivery.html" class="font-medium hover:text-habesha-red transition">Delivery</a>
                 </div>
 
-                <!-- Mobile Menu Button -->
+                
                 <button id="mobile-menu-button" class="md:hidden">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
- <!-- Menu Section -->
     <section id="menu" class="bg-gray-50 py-16">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
@@ -118,7 +117,6 @@
                 <div class="w-24 h-1 bg-habesha-red mx-auto"></div>
             </div>
             
-            <!-- Menu Categories -->
             <div class="flex justify-center mb-12">
                 <div class="inline-flex rounded-lg border border-gray-200 p-1">
                     <button class="menu-category px-6 py-2 rounded-md bg-habesha-red text-white font-medium" data-category="all">All</button>
@@ -129,20 +127,18 @@
                 </div>
             </div>
             
-            <!-- Menu Items Grid -->
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="menu-items">
-                <!-- Menu items will be loaded here -->
+            
             </div>
         </div>
          
-                <!-- Order Summary -->
                 <div>
                     <div class="sticky top-24">
                         <div class="bg-gray-900 text-white rounded-2xl p-8 shadow-lg">
                             <h3 class="text-2xl font-bold mb-6">Order Summary</h3>
                             
                             <div id="order-items" class="space-y-4 mb-6">
-                                <!-- Order items will be added here -->
+                                
                                 <div class="text-center py-8">
                                     <i data-lucide="shopping-cart" class="w-12 h-12 mx-auto text-gray-400 mb-4"></i>
                                     <p class="text-gray-400">Your cart is empty</p>
@@ -233,11 +229,11 @@
                 <div>
                     <h3 class="text-lg font-bold mb-6">Quick Links</h3>
                     <ul class="space-y-3">
-                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
-                        <li><a href="#menu" class="text-gray-400 hover:text-white transition">Menu</a></li>
-                        <li><a href="#order" class="text-gray-400 hover:text-white transition">Order Online</a></li>
-                        <li><a href="#delivery" class="text-gray-400 hover:text-white transition">Delivery Info</a></li>
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="menu.html" class="text-gray-400 hover:text-white transition">Menu</a></li>
+                        <li><a href="order.html" class="text-gray-400 hover:text-white transition">Order Online</a></li>
+                        <li><a href="delivery.html" class="text-gray-400 hover:text-white transition">Delivery Info</a></li>
                     </ul>
                 </div>
                 
@@ -258,7 +254,7 @@
             
             <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
                 <p>&copy; 2026 Habesha's Kitchen. All rights reserved.</p>
-                <p class="text-sm mt-2">Traditional Ethiopian & culture Food>
+                <p class="text-sm mt-2">Traditional Ethiopian & culture Food</p>
             </div>
         </div>
     </footer>
@@ -270,7 +266,7 @@
                      lucide.createIcons();
         
 
-// Mobile Menu Toggle
+
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
 
@@ -559,6 +555,12 @@ function updateCartDisplay() {
     const totalElement = document.getElementById('total');
     const checkoutButton = document.getElementById('checkout-btn');
     
+    // Ensure container elements exist
+    if (!orderItemsContainer || !subtotalElement || !deliveryFeeElement || !taxElement || !totalElement) return;
+
+    // Start subtotal at 0 so totals are always calculated
+    let subtotal = 0;
+
     if (cart.length === 0) {
         orderItemsContainer.innerHTML = `
             <div class="text-center py-8">
@@ -570,7 +572,6 @@ function updateCartDisplay() {
         checkoutButton.disabled = true;
         lucide.createIcons();
     } else {
-        let subtotal = 0;
         orderItemsContainer.innerHTML = '';
         
         cart.forEach(item => {
@@ -625,11 +626,12 @@ function updateCartDisplay() {
         lucide.createIcons();
     }
     
-    // Calculate totals
+    // Calculate totals (delivery depends on orderType)
     const delivery = orderType === 'delivery' ? deliveryFee : 0;
     const tax = subtotal * taxRate;
     const total = subtotal + delivery + tax;
-    
+
+    // Update UI
     subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
     deliveryFeeElement.textContent = orderType === 'delivery' ? `$${deliveryFee.toFixed(2)}` : '$0.00';
     taxElement.textContent = `$${tax.toFixed(2)}`;
