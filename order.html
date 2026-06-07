@@ -79,11 +79,11 @@
         .spice-level-5 { width: 100%; }
     </style>
     <body class="bg-gray-50">
-    <!-- Navigation -->
+    
     <nav class="bg-white shadow-lg sticky top-0 z-50">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
-                <!-- Logo -->
+                
                 <div class="flex items-center space-x-2">
                     <div class="w-10 h-10 bg-habesha-red rounded-full flex items-center justify-center">
                         <span class="text-white font-bold text-xl">HK</span>
@@ -94,7 +94,7 @@
                     </div>
                 </div>
 
-                <!-- Desktop Navigation -->
+                
                 <div class="hidden md:flex space-x-8">
                     <a href="index.html" class="font-medium hover:text-habesha-red transition">Home</a>
                     <a href="about.html" class="font-medium hover:text-habesha-red transition">About</a>
@@ -103,12 +103,12 @@
                     <a href="delivery.html" class="font-medium hover:text-habesha-red transition">Delivery</a>
                 </div>
 
-                <!-- Mobile Menu Button -->
+                
                 <button id="mobile-menu-button" class="md:hidden">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
-            <!-- Order Section -->
+            
     <section id="order" class="bg-white py-16">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
@@ -118,37 +118,21 @@
             </div>
             
             <div class="grid md:grid-cols-2 gap-12">
-                <!-- Order Form -->
+                
                 <div>
-                    <div class="bg-gray-50 rounded-2xl p-8 shadow-lg">
-                        <h3 class="text-2xl font-bold mb-6">Place Your Order</h3>
-                        
-                        <div class="mb-6">
-                            <label class="block text-gray-700 mb-2">Order Type</label>
-                            <div class="flex space-x-4">
-                                <button class="order-type-btn flex-1 py-3 border-2 border-gray-200 rounded-lg text-center font-medium" data-type="delivery">
-                                    <i data-lucide="truck" class="w-5 h-5 inline-block mr-2"></i>
-                                    Delivery
-                                </button>
-                                <button class="order-type-btn flex-1 py-3 border-2 border-habesha-red rounded-lg text-center font-medium bg-habesha-red text-white" data-type="pickup">
-                                    <i data-lucide="package" class="w-5 h-5 inline-block mr-2"></i>
-                                    Pickup
-                                </button>
-                            </div>
-                        </div>
-                        
+                   
                         <div class="space-y-4">
                             <div>
                                 <label class="block text-gray-700 mb-2">Full Name</label>
-                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-habesha-red" placeholder="Your name">
+                                <input id="contact-name" type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-habesha-red" placeholder="Your name">
                             </div>
                             <div>
                                 <label class="block text-gray-700 mb-2">Phone Number</label>
-                                <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-habesha-red" placeholder="(123) 456-7890">
+                                <input id="contact-phone" type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-habesha-red" placeholder="(123) 456-7890">
                             </div>
                             <div>
                                 <label class="block text-gray-700 mb-2">Email Address</label>
-                                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-habesha-red" placeholder="you@example.com">
+                                <input id="contact-email" type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-habesha-red" placeholder="you@example.com">
                             </div>
                             <div id="delivery-address">
                                 <label class="block text-gray-700 mb-2">Delivery Address</label>
@@ -156,8 +140,16 @@
                             </div>
                             <div>
                                 <label class="block text-gray-700 mb-2">Order Notes</label>
-                                <textarea class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-habesha-red" rows="3" placeholder="Special instructions, allergies, etc."></textarea>
+                                <textarea id="contact-notes" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-habesha-red" rows="3" placeholder="Special instructions, allergies, etc."></textarea>
                             </div>
+                            <div>
+ 
+                        
+                      
+                        
+                        </div>
+                        <div class="mt-6">
+                            <button id="send-contact" class="w-full py-3 bg-habesha-green text-white font-semibold rounded-lg hover:bg-green-700 transition">Send Contact Details</button>
                         </div>
                     </div>
                 </div>
@@ -231,11 +223,11 @@
                 <div>
                     <h3 class="text-lg font-bold mb-6">Quick Links</h3>
                     <ul class="space-y-3">
-                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
-                        <li><a href="#menu" class="text-gray-400 hover:text-white transition">Menu</a></li>
-                        <li><a href="#order" class="text-gray-400 hover:text-white transition">Order Online</a></li>
-                        <li><a href="#delivery" class="text-gray-400 hover:text-white transition">Delivery Info</a></li>
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="menu.html" class="text-gray-400 hover:text-white transition">Menu</a></li>
+                        <li><a href="order.html" class="text-gray-400 hover:text-white transition">Order Online</a></li>
+                        <li><a href="delivery.html" class="text-gray-400 hover:text-white transition">Delivery Info</a></li>
                     </ul>
                 </div>
                 
@@ -256,9 +248,42 @@
             
             <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
                 <p>&copy; 2026 Habesha's Kitchen. All rights reserved.</p>
-                <p class="text-sm mt-2">Traditional Ethiopian & culture Food>
+                <p class="text-sm mt-2">Traditional Ethiopian & culture Food</p>
             </div>
         </div>
     </footer>
+    <script>
+        // Simple helper to show notifications
+        function showToast(message, success = true) {
+            const toast = document.createElement('div');
+            toast.className = `fixed bottom-6 right-6 px-6 py-3 rounded-lg shadow-lg z-50 transition transform ${success ? 'bg-habesha-green text-white' : 'bg-red-500 text-white'}`;
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            setTimeout(() => { toast.style.opacity = '0'; toast.style.transform = 'translateY(20px)'; }, 2500);
+            setTimeout(() => { if (toast.parentNode) toast.parentNode.removeChild(toast); }, 3000);
+        }
+
+        // Basic validation regexes
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const phoneRegex = /^[0-9\-\s()+]{7,20}$/;
+
+        document.getElementById('send-contact').addEventListener('click', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('contact-name').value.trim();
+            const phone = document.getElementById('contact-phone').value.trim();
+            const email = document.getElementById('contact-email').value.trim();
+            const notes = document.getElementById('contact-notes').value.trim();
+
+            if (!name) { showToast('Please enter your full name.', false); return; }
+            if (!email || !emailRegex.test(email)) { showToast('Please enter a valid email address.', false); return; }
+            if (!phone || !phoneRegex.test(phone)) { showToast('Please enter a valid phone number.', false); return; }
+
+         
+            showToast('Contact details sent — thank you!', true);
+            
+
+         
+        });
+    </script>
 </body>
 </html>
