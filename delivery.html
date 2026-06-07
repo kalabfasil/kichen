@@ -159,10 +159,14 @@
                     <h3 class="text-xl font-bold mb-4">Track Your Order</h3>
                     <p class="text-gray-600 mb-6">Real-time tracking for your delivery. Get live updates on your order status.</p>
                     <div class="mt-6">
-                        <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-habesha-red mb-4" placeholder="Enter order number">
-                        <button class="w-full py-3 bg-habesha-red text-white font-semibold rounded-lg hover:bg-red-700 transition">
+                        <input id="track-order-number" type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-habesha-red mb-4" placeholder="Enter order number">
+                        <button id="track-order-btn" class="w-full py-3 bg-habesha-red text-white font-semibold rounded-lg hover:bg-red-700 transition">
                             Track Order
                         </button>
+
+                        <div id="track-status" class="mt-4 p-4 rounded-lg bg-gray-50 text-gray-700 hidden">
+                            <!-- Status updates will appear here -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -309,5 +313,48 @@
             </div>
         </div>
     </footer>
+    <script>
+        // Simple client-side order tracking simulation
+        const trackBtn = document.getElementById('track-order-btn');
+        const trackInput = document.getElementById('track-order-number');
+        const trackStatus = document.getElementById('track-status');
+
+        function showStatus(message, isError = false) {
+            trackStatus.classList.remove('hidden');
+            trackStatus.textContent = message;
+            trackStatus.style.color = isError ? '#b91c1c' : '#065f46'; // red or green
+        }
+
+        function simulateTracking(orderId) {
+            // Simple deterministic mock states based on orderId hash
+            const states = [
+                'Order received',
+                'Preparing your food',
+                'Out for delivery',
+                'Delivered'
+            ];
+            // Create a pseudo-random index from orderId
+            let hash = 0;
+            for (let i = 0; i < orderId.length; i++) hash = (hash << 5) - hash + orderId.charCodeAt(i);
+            hash = Math.abs(hash);
+
+            // Pick a simulated progress position
+            const pos = hash % states.length;
+
+            // Show the current state and the next expected state
+            showStatus(`${states[pos]}${pos < states.length - 1 ? ' — ' + states[pos + 1] + ' coming soon.' : ' — Enjoy!'}`);
+        }
+
+        trackBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const orderId = trackInput.value.trim();
+            if (!orderId) { showStatus('Please enter your order number.', true); return; }
+            // Basic validation: alphanumeric and 3-20 chars
+            if (!/^[a-zA-Z0-9\-]{3,20}$/.test(orderId)) { showStatus('Invalid order number format.', true); return; }
+
+            // Simulate fetching tracking data
+            simulateTracking(orderId);
+        });
+    </script>
     </body>
 </html>
